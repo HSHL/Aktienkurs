@@ -10,7 +10,7 @@ class FetchData{
     //Q_OBJECT
 public:
     FetchData();
-    int bla;
+    int test;
     
 };
 
