@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     
     repository repo;
+    //:D
     
     window Window(&repo);
     Window.show();
