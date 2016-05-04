@@ -5,6 +5,7 @@
 //#include <regex>
 #include <String>
 #include <QObject>
+#include <qtnetwork/qhttp>
 
 class FetchData{
     //Q_OBJECT
