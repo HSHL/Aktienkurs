@@ -11,6 +11,7 @@ class FetchData{
     //Q_OBJECT
 public:
     FetchData();
+    void GetPage(QString url);
     int test;
     
 };
