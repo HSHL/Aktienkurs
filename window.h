@@ -3,6 +3,7 @@
 #define WINDOW_H
 
 #include <QApplication>
+#include <QString>
 #include <QPushButton>
 #include <QWidget>
 #include <QObject>
@@ -11,6 +12,8 @@
 #include <QTextEdit>
 #include <QLineEdit>
 #include <QLabel>
+#include <Qtwebkit/QWebView>
+#include <QUrl>
 #include "repository.h"
 
 class window:public QWidget{

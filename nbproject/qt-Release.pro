@@ -22,3 +22,4 @@ QMAKE_CXX = g++
 DEFINES += 
 INCLUDEPATH += 
 LIBS += 
+QT += webkit

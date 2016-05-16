@@ -3,7 +3,7 @@
 
 window::window(repository *repo){
     this->repo = repo;
-    this->setMinimumSize(500,300);
+    this->setMinimumSize(300,200);
     
     QVBoxLayout *mainlayout=new QVBoxLayout(this);
     
@@ -44,9 +44,20 @@ window::window(repository *repo){
     QPushButton *GoButton=new QPushButton("GO");
     GoButton->setMaximumWidth(100);
     
-    QPushButton *testbutton=new QPushButton("Hier kommt das Diagramm hin.");//das hier weg
+    //QPushButton *testbutton=new QPushButton("Hier kommt das Diagramm hin.");//das hier weg
     
-    QLabel *testlabel=new QLabel("<img src=\"http://chart.finance.yahoo.com/t?s=EURUSD%3dX\">");
+    //QLabel *testlabel=new QLabel("<object type=\"application/x-shockwave-flash\" id=\"yfi_chart_swf\" data=\"https://s.yimg.com/bm/lib/fi/common/p/d/static/swf/2.0.356981/2.0.0/de-DE/largechart.swf\" width=\"824\" height=\"516\" style=\"visibility: visible; height: 433px;\"><param name=\"allowscriptaccess\" value=\"always\"><param name=\"wmode\" value=\"opaque\"><param name=\"flashvars\" value=\"sigDevEnabled=false&amp;changeSymbolEnabled=false&amp;state=symbol=EURUSD%3DX;range=1y;compare=;indicator=volume;charttype=area;crosshair=on;ohlcvalues=0;logscale=off;source=;\"></object>");
+    QWebView *view=new QWebView();
+    //view->load(QUrl("http://chart.finance.yahoo.com/t?s=EURUSD%3dX"));
+    QString bla3("<img src=\"http://chart.finance.yahoo.com/t?s=EURUSD%3dX\" width=400/>");
+    
+    
+    QString bla("<iframe><object type='application/x-shockwave-flash' id='yfi_chart_swf' data='https://s.yimg.com/bm/lib/fi/common/p/d/static/swf/2.0.356981/2.0.0/de-DE/largechart.swf' width='824' height='516' style='visibility: visible; height: 433px;'><param name='allowscriptaccess' value='always'><param name='wmode' value='opaque'><param name='flashvars' value='sigDevEnabled=false&amp;changeSymbolEnabled=false&amp;state=symbol=EURUSD%3DX;range=1y;compare=;indicator=volume;charttype=area;crosshair=on;ohlcvalues=0;logscale=off;source=;'></object></iframe>");
+    
+    //view->page("http://chart.finance.yahoo.com/t?s=EURUSD%3dX");
+    //view->load(QUrl("http://google.de"));
+    view->setHtml(bla3);
+    //view->load(QUrl("http://google.de"));
     
     QHBoxLayout *firstinputline=new QHBoxLayout;
     QHBoxLayout *secondinputline=new QHBoxLayout;
@@ -82,8 +93,8 @@ window::window(repository *repo){
     
     
     mainlayout->addLayout(inputtable,0);
-    mainlayout->addStretch(1);
-    mainlayout->addWidget(testlabel,1);//diagram
+    mainlayout->addStretch(0);
+    mainlayout->addWidget(view,1);//diagram
     
     
 };

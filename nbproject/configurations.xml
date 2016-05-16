@@ -41,7 +41,7 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <qt>
-        <modules>core gui widgets</modules>
+        <modules>core gui widgets network webkit</modules>
       </qt>
       <compileType>
       </compileType>
@@ -68,7 +68,7 @@
       </toolsSet>
       <qt>
         <buildMode>1</buildMode>
-        <modules>core gui widgets</modules>
+        <modules>core gui widgets network webkit</modules>
       </qt>
       <compileType>
         <cTool>
