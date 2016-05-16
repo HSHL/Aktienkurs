@@ -8,6 +8,9 @@
 #include <QObject>
 #include <QMainWindow>
 #include <QLayout>
+#include <QTextEdit>
+#include <QLineEdit>
+#include <QLabel>
 #include "repository.h"
 
 class window:public QWidget{
@@ -18,7 +21,20 @@ public:
 private:
     repository *repo;   
     QVBoxLayout *mainlayout;
-    QPushButton *testbutton;
+    QGridLayout *inputtable;
+    QPushButton *testbutton;//der hier weg
+    QPushButton *GoButton;
+    QLineEdit *aktie;
+    QLabel *aktietext;
+    QLabel *textstartdate;
+    QLineEdit *startdateday;
+    QLineEdit *startdatemonth;
+    QLineEdit *startdateyear;
+    QLabel *textenddate;
+    QLineEdit *enddateday;
+    QLineEdit *enddatemonth;
+    QLineEdit *enddateyear;
+    
 
 };
 
