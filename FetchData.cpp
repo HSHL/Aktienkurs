@@ -11,7 +11,7 @@ FetchData::FetchData(){
 };
 
 void FetchData::GetPage(QString url){
-    
+    /*
     // content
     QByteArray content("a=root&b=root&c=submit");
  
@@ -24,5 +24,5 @@ void FetchData::GetPage(QString url){
     // request
     QHttp http("www.membres.lycos.fr");
     http.request(header, content);
-    
+    */
 };
