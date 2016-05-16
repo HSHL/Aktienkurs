@@ -21,7 +21,7 @@ public:
 private:
     repository *repo;   
     QVBoxLayout *mainlayout;
-    QGridLayout *inputtable;
+    QVBoxLayout *inputtable;
     QPushButton *testbutton;//der hier weg
     QPushButton *GoButton;
     QLineEdit *aktie;
