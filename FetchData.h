@@ -7,13 +7,15 @@
 #include <QObject>
 #include <qtnetwork/qhttp>
 
-class FetchData{
+class FetchData {
     //Q_OBJECT
 public:
     FetchData();
     void GetPage(QString url);
     int test;
-    
+
+private:
+
 };
 
 

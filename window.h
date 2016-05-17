@@ -14,30 +14,30 @@
 #include <QLabel>
 #include <Qtwebkit/QWebView>
 #include <QUrl>
+#include <QComboBox>
 #include "repository.h"
 
-class window:public QWidget{
+class window : public QWidget {
     Q_OBJECT
 public:
     window(repository *repo);
-    
+
 private:
-    repository *repo;   
+    char timerangeletter();
+    repository *repo;
     QVBoxLayout *mainlayout;
     QVBoxLayout *inputtable;
-    QPushButton *testbutton;//der hier weg
+    QHBoxLayout *firstinputline;
+    QHBoxLayout *secondinputline;
+    QHBoxLayout *thirdinputline;
+    QHBoxLayout *fourthinputline;
     QPushButton *GoButton;
-    QLineEdit *aktie;
+
     QLabel *aktietext;
     QLabel *textstartdate;
-    QLineEdit *startdateday;
-    QLineEdit *startdatemonth;
-    QLineEdit *startdateyear;
     QLabel *textenddate;
-    QLineEdit *enddateday;
-    QLineEdit *enddatemonth;
-    QLineEdit *enddateyear;
-    
+    QLabel *texttimerange;
+
 
 };
 
