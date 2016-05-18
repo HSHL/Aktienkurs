@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QLineEdit>
 #include <QComboBox>
+#include <QWebView>
 
 class repository : public QObject {
     Q_OBJECT
@@ -20,6 +21,8 @@ public:
     QLineEdit enddatemonth;
     QLineEdit enddateyear;
     QComboBox timerangeunit;
+    QWebView view;
+    QString htmlcode;
 };
 
 

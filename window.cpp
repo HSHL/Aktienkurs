@@ -10,7 +10,7 @@ window::window(repository *repo) {
     QVBoxLayout *inputtable = new QVBoxLayout;
 
     //QLineEdit *aktie=new QLineEdit;
-    repo->aktie.setFixedWidth(110);
+    repo->aktie.setFixedWidth(111);
     repo->timerange.setFixedWidth(25);
     QLabel *aktietext = new QLabel;
     aktietext->setText("Aktie:");
@@ -55,29 +55,32 @@ window::window(repository *repo) {
     repo->enddateyear.setFixedWidth(50);
     repo->enddateyear.setMaxLength(4);
     QPushButton *GoButton = new QPushButton("GO");
-    GoButton->setMaximumWidth(100);
-
+    GoButton->setMaximumWidth(112);
+    
     //QPushButton *testbutton=new QPushButton("Hier kommt das Diagramm hin.");//das hier weg
 
     //QLabel *testlabel=new QLabel("<object type=\"application/x-shockwave-flash\" id=\"yfi_chart_swf\" data=\"https://s.yimg.com/bm/lib/fi/common/p/d/static/swf/2.0.356981/2.0.0/de-DE/largechart.swf\" width=\"824\" height=\"516\" style=\"visibility: visible; height: 433px;\"><param name=\"allowscriptaccess\" value=\"always\"><param name=\"wmode\" value=\"opaque\"><param name=\"flashvars\" value=\"sigDevEnabled=false&amp;changeSymbolEnabled=false&amp;state=symbol=EURUSD%3DX;range=1y;compare=;indicator=volume;charttype=area;crosshair=on;ohlcvalues=0;logscale=off;source=;\"></object>");
-    QWebView *view = new QWebView();
+    //QWebView *view = new QWebView();
     //view->load(QUrl("http://chart.finance.yahoo.com/t?s=EURUSD%3dX"));
     //QString htmlcode("<img src=\"http://chart.finance.yahoo.com/t?s=EURUSD%3dX\" width=400/>");
     
     //QString htmlcode("<img src=\"http://ichart.finance.yahoo.com/instrument/1.0/%1/chart;range=%2/image;size=260x115\" width=350>");
     //QString test;//(htmlcode.arg(repo->aktie).arg("5d"));
-    QString htmlcode("<img src=\"http://ichart.finance.yahoo.com/instrument/1.0/"+repo->aktie.text()+"/chart;range="+repo->timerange.text()+timerangeletter()+"/image;size=260x115\" width=260>");
+    //QString *htmlcode=new QString("<img src=\""+url()+"\" width=260>");
+    repo->htmlcode=("<img src=\""+url()+"\" width=260>");
     
     //QString bla("<iframe><object type='application/x-shockwave-flash' id='yfi_chart_swf' data='https://s.yimg.com/bm/lib/fi/common/p/d/static/swf/2.0.356981/2.0.0/de-DE/largechart.swf' width='824' height='516' style='visibility: visible; height: 433px;'><param name='allowscriptaccess' value='always'><param name='wmode' value='opaque'><param name='flashvars' value='sigDevEnabled=false&amp;changeSymbolEnabled=false&amp;state=symbol=EURUSD%3DX;range=1y;compare=;indicator=volume;charttype=area;crosshair=on;ohlcvalues=0;logscale=off;source=;'></object></iframe>");
     
     //view->page("http://chart.finance.yahoo.com/t?s=EURUSD%3dX");
     //view->load(QUrl("http://google.de"));
-    view->setHtml(htmlcode);
+    repo->view.setHtml(repo->htmlcode);
+    connect(GoButton,SIGNAL(clicked()),this,SLOT(renew()));
+
     //view->load(QUrl("http://google.de"));
 
     QHBoxLayout *firstinputline = new QHBoxLayout;
     QHBoxLayout *secondinputline = new QHBoxLayout;
-    QHBoxLayout *thirdinputline = new QHBoxLayout;
+    //QHBoxLayout *thirdinputline = new QHBoxLayout;
     QHBoxLayout *fourthinputline = new QHBoxLayout;
 
     //1.line
@@ -117,7 +120,7 @@ window::window(repository *repo) {
 
     mainlayout->addLayout(inputtable, 0);
     mainlayout->addStretch(0);
-    mainlayout->addWidget(view, 1); //diagram
+    mainlayout->addWidget(&repo->view, 1); //diagram
 
 
 };
@@ -127,5 +130,17 @@ char window::timerangeletter(){
     if(repo->timerangeunit.currentText()=="Monate")return 'm';
     else if(repo->timerangeunit.currentText()=="Jahre")return 'y';
     else if(repo->timerangeunit.currentText()=="Tage")return 'd';
+    return 'd';
+};
+
+QString window::url(){
+    //this->repo = repo;
+    return ("http://ichart.finance.yahoo.com/instrument/1.0/"+repo->aktie.text()+"/chart;range="+repo->timerange.text()+timerangeletter()+"/image;size=260x115");
+};
+
+void window::renew(){
     
+    repo->htmlcode="<img src=\""+url()+"\" width=260>";
+    
+    repo->view.setHtml(repo->htmlcode);
 };
