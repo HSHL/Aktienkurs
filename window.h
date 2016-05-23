@@ -33,12 +33,8 @@ private:
     QHBoxLayout *thirdinputline;
     QHBoxLayout *fourthinputline;
     QPushButton *GoButton;
-    //QWebView *view;
-    //QString *htmlcode;
 
     QLabel *aktietext;
-    QLabel *textstartdate;
-    QLabel *textenddate;
     QLabel *texttimerange;
 private slots:
     void renew();

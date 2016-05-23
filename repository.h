@@ -14,12 +14,6 @@ public:
     repository();
     QLineEdit aktie;
     QLineEdit timerange;
-    QLineEdit startdateday;
-    QLineEdit startdatemonth;
-    QLineEdit startdateyear;
-    QLineEdit enddateday;
-    QLineEdit enddatemonth;
-    QLineEdit enddateyear;
     QComboBox timerangeunit;
     QWebView view;
     QString htmlcode;
