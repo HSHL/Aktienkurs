@@ -1,7 +1,6 @@
 #include <QApplication>
 #include <QTextCodec>
 #include "repository.h"
-#include "FetchData.h"
 #include "window.h"
 
 //#include <regex>
