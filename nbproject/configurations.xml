@@ -4,7 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>FetchData.h</itemPath>
       <itemPath>repository.h</itemPath>
       <itemPath>window.h</itemPath>
     </logicalFolder>
@@ -15,7 +14,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>FetchData.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>repository.cpp</itemPath>
       <itemPath>window.cpp</itemPath>
@@ -45,10 +43,6 @@
       </qt>
       <compileType>
       </compileType>
-      <item path="FetchData.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="FetchData.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="repository.cpp" ex="false" tool="1" flavor2="0">
@@ -84,10 +78,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="FetchData.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="FetchData.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="repository.cpp" ex="false" tool="1" flavor2="0">

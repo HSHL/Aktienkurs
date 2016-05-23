@@ -38,19 +38,17 @@ window::window(repository *repo) {
     firstinputline->addWidget(aktietext, 0);
     firstinputline->addWidget(&repo->aktie, 1);
 
+    
+    
     //2.line
-    
-    
     inputtable->addLayout(secondinputline, 1);
     secondinputline->addStretch(1);
     secondinputline->addWidget(texttimerange, 0);
     secondinputline->addWidget(&repo->timerange, 1);
     secondinputline->addWidget(&repo->timerangeunit,2);
 
+   
     //3.line
-
-
-    //4.line
     inputtable->addLayout(thirdinputline, 2);
     thirdinputline->addStretch(2);
     thirdinputline->addWidget(GoButton, 2);
