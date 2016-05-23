@@ -12,8 +12,8 @@ window::window(repository *repo) {
     repo->timerange.setFixedWidth(25);
     QLabel *aktietext = new QLabel;
     aktietext->setText("Aktie:");
-    QLabel *texttimerange = new QLabel;         /////
-    texttimerange->setText("Zeitspanne:");  /////////
+    QLabel *texttimerange = new QLabel;         
+    texttimerange->setText("Zeitspanne:");  
     repo->timerangeunit.addItem(tr("Tage"));
     repo->timerangeunit.addItem(tr("Monate"));
     repo->timerangeunit.addItem(tr("Jahre"));
@@ -70,7 +70,6 @@ char window::timerangeletter(){
 };
 
 QString window::url(){
-    //this->repo = repo;
     return ("http://ichart.finance.yahoo.com/instrument/1.0/"+repo->aktie.text()+"/chart;range="+repo->timerange.text()+timerangeletter()+"/image;size=260x115");
 };
 
