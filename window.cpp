@@ -3,7 +3,7 @@
 window::window(repository *repo) {
     this->repo = repo;
     //this->setMinimumSize(300, 200);
-    this->setFixedSize(320,250);
+    this->setFixedSize(550,350);
 
     QVBoxLayout *mainlayout = new QVBoxLayout(this);
 
@@ -67,13 +67,16 @@ window::window(repository *repo) {
     //QString htmlcode("<img src=\"http://ichart.finance.yahoo.com/instrument/1.0/%1/chart;range=%2/image;size=260x115\" width=350>");
     //QString test;//(htmlcode.arg(repo->aktie).arg("5d"));
     //QString *htmlcode=new QString("<img src=\""+url()+"\" width=260>");
-    repo->htmlcode=("<img src=\""+url()+"\" width=260>");
+    //repo->htmlcode=("<img src=\""+url()+"\" width=260>");
     
     //QString bla("<iframe><object type='application/x-shockwave-flash' id='yfi_chart_swf' data='https://s.yimg.com/bm/lib/fi/common/p/d/static/swf/2.0.356981/2.0.0/de-DE/largechart.swf' width='824' height='516' style='visibility: visible; height: 433px;'><param name='allowscriptaccess' value='always'><param name='wmode' value='opaque'><param name='flashvars' value='sigDevEnabled=false&amp;changeSymbolEnabled=false&amp;state=symbol=EURUSD%3DX;range=1y;compare=;indicator=volume;charttype=area;crosshair=on;ohlcvalues=0;logscale=off;source=;'></object></iframe>");
     
     //view->page("http://chart.finance.yahoo.com/t?s=EURUSD%3dX");
     //view->load(QUrl("http://google.de"));
-    repo->view.setHtml(repo->htmlcode);
+    //repo->view.setHtml(repo->htmlcode);
+    
+    this->renew(); 
+    
     connect(GoButton,SIGNAL(clicked()),this,SLOT(renew()));
 
     //view->load(QUrl("http://google.de"));
@@ -140,7 +143,7 @@ QString window::url(){
 
 void window::renew(){
     
-    repo->htmlcode="<img src=\""+url()+"\" width=260>";
+    repo->htmlcode="<img src=\""+url()+"\" width=520>";
     
     repo->view.setHtml(repo->htmlcode);
 };
