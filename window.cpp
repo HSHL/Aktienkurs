@@ -30,7 +30,7 @@ window::window(repository *repo) {
 
     QHBoxLayout *firstinputline = new QHBoxLayout;
     QHBoxLayout *secondinputline = new QHBoxLayout;
-    QHBoxLayout *fourthinputline = new QHBoxLayout;
+    QHBoxLayout *thirdinputline = new QHBoxLayout;
 
     //1.line
     inputtable->addLayout(firstinputline, 0);
@@ -51,9 +51,9 @@ window::window(repository *repo) {
 
 
     //4.line
-    inputtable->addLayout(fourthinputline, 2);
-    fourthinputline->addStretch(2);
-    fourthinputline->addWidget(GoButton, 2);
+    inputtable->addLayout(thirdinputline, 2);
+    thirdinputline->addStretch(2);
+    thirdinputline->addWidget(GoButton, 2);
 
 
     mainlayout->addLayout(inputtable, 0);

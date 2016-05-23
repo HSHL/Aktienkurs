@@ -31,7 +31,6 @@ private:
     QHBoxLayout *firstinputline;
     QHBoxLayout *secondinputline;
     QHBoxLayout *thirdinputline;
-    QHBoxLayout *fourthinputline;
     QPushButton *GoButton;
 
     QLabel *aktietext;
